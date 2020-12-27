@@ -18,7 +18,7 @@ const findUser = (db, callback) => {
     let cursor = db.collection('user').find();
     cursor.toArray((err, docs) => {
         assert.equal(null, err);
-        callback(docs);
+        callback(docs[0]);
     })
 }
 

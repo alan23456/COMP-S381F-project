@@ -1,0 +1,16 @@
+<html>
+
+    <body>
+	<h1> How much would you like to score this Restaurant? </h1><br>
+	<hr>
+        <form action="/rateInfo?name=<%= name %>" method="POST">
+            	Score(0-10): <input type="number" name="score" min="0" max="10">
+		<input type="hidden" name="_id" value= <%= _id%>>
+		<input type="hidden" name="name" value= <%= name %>>
+		<input type="hidden" name="username" value= <%= username%>>
+            	<input type="submit" value="Score">  
+        </form>
+	<hr>
+	<a href="/homepage">Home</a>
+    </body>
+</html>

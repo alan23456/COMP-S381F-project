@@ -1,0 +1,54 @@
+  
+<html>
+   <head>
+      <title> Login Page </title>
+      <style>   
+         Body {  
+         font-family: Calibri, Helvetica, sans-serif;  
+         background-color: white;  
+         }  
+         input[type=submit] {   
+         background-color: black;   
+         width: 100%;  
+         color: white;   
+         padding: 15px;   
+         margin: 10px 0px;   
+         border: none;   
+         cursor: pointer;   
+         }   
+         input[type=text], input[type=password] {   
+         width: 100%;   
+         margin: 8px 0;  
+         padding: 12px 20px;   
+         display: inline-block;   
+         border: 2px solid black;   
+         box-sizing: border-box;   
+         }  
+
+         .cancelbtn {   
+         width: auto;   
+         padding: 10px 18px;  
+         margin: 10px 5px;  
+         }   
+         .container { 
+         max-width: 512px;
+         background-color: white;  
+         border:3px solid #fff;
+         margin-left:660px;
+         }   
+      </style>
+   </head>
+<body>
+      <center>
+         <h1> Login Page </h1>
+      </center>
+	<form action="/login" method="post">
+	 <div class="container"> 
+	<label>Username </label> <input type="text" name="name"><br>
+	<label>Password </label> <input type="password" name="password"><br>
+	<input type="submit" value="Login">
+	</div>
+	</form>
+</body>
+
+</html>

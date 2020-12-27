@@ -1,0 +1,30 @@
+<html>
+
+    <body>
+	<h1> Update Document </h1><br>
+	<hr>
+	
+	<% var a = JSON.parse(JSON.stringify(restaurant.address)); %>
+	<% var coord = JSON.parse(JSON.stringify(a.coord)); %>
+	
+        <form action="/update" method="POST">
+            	Name: <input name="name" value= "<%- restaurant.name%>"><br>
+		borough: <input name="borough" value= "<%- restaurant.borough %>"><br>
+		Cuisine: <input name="cuisine" value= "<%- restaurant.cuisine %>"><br>
+		Photo mimetype: <input name="photo_mimetype" value= "<%- restaurant.photo_mimetype %>"><br>
+            	Address: <br>
+			Street: <input name="street" value= "<%- a.street %>"><br>
+			Building: <input name="building" value= "<%- a.building %>"><br>
+			zipcode: <input name="zipcode" value= "<%- a.zipcode %>"><br>
+			GPS Coordinates (lon.): <input name="GPSlon" value= "<%- coord[0]%>"><br>
+			GPS Coordinates (lat.): <input name="GPSlat" value= "<%- coord[1]%>"><br>
+		Owner: <input name="owner" value= "<%= restaurant.owner %>"><br>
+		<input type="file" name="filetoupload"><br>
+            	<input type="hidden" name="_id" value= <%- restaurant._id %>>
+            	<input type="submit" value="update">  
+        </form>
+	<hr>
+	<a href="/delete">Delete this document</a>
+    </body>
+</html>
+

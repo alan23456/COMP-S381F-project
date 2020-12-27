@@ -1,0 +1,47 @@
+<html>
+        <title>Restaurant Details</title>
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+        <script type="text/javascript">
+            var loadMap = function() 
+            {
+                var myOptions = {
+                  center: new google.maps.LatLng(<%= restaurant.address.coord[0]%> , <%= restaurant.address.coord[1]%> ),
+                  zoom: 10,
+                  mapTypeId: google.maps.MapTypeId.ROADMAP
+                };
+                var map = new google.maps.Map(document.getElementById("map"),
+                    myOptions);
+            };
+            window.onload= loadMap;
+        </script>
+    <body>
+	<div id="map" style="width:500px;height:500px;"></div>
+	<h1>Restaurants Details</h1>
+	<hr>
+	    Owner: <%= restaurant.owner%><br>
+            Name: <%= restaurant.name %> <br>
+	    Borough: <%= restaurant.borough %> <br>
+            Cuisine: <%= restaurant.cuisine %> <br>
+	    Building: <%= restaurant.address.building %> <br>
+	    zipcode: <%= restaurant.address.zipcode %> <br>
+    	    Street: <%= restaurant.address.street %><br>
+            GPS Coordinates (lon.): <%= restaurant.address.coord[0]%> <br>
+            GPS Coordinates (lat.): <%= restaurant.address.coord[1]%> <br>
+
+	    <% for(var i=0; i<restaurant.grades.score.length; i++) {%>
+           <tr>
+             <td>
+               Rating <%= i+1 %> : <%= restaurant.grades.score[i]%> (<%= restaurant.grades.User[i]%>)<br>
+             </td>
+           </tr>
+           <% } %>
+
+
+            <a href="/ratepage?name=<%= restaurant.name%>&_id=<%= restaurant._id%>"><button type="button">Rate this restaurant</button></a>
+	    <a href="/homepage">Home</a>
+   	    
+		
+	
+    </body>
+</html>
+

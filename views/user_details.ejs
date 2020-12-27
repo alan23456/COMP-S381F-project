@@ -1,0 +1,15 @@
+<html>
+    <body>
+        <H2>Restarutants Owned</H2><hr>
+      	<ul>
+
+            <% for (var b of restaurant) { %>
+
+	    <li>Restaurant Name: 
+		<a href="/edit?_id=<%= b._id %>"><%= b.name%></a></li>
+            <% } %>
+        </ul>
+        <br>
+        <a href="/homepage">home</a>
+    </body>
+</html>

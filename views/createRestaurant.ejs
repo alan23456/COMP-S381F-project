@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+/* Add padding to containers */
+.container {
+  padding: 16px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for the submit button */
+.registerbtn {
+  background-color: black;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+.registerbtn:hover {
+  opacity: 1;
+}
+
+.hyperlink {
+  background-color: #f1f1f1;
+  
+}
+a:visited {
+  color: black;
+}
+a:hover {
+  color: hotpink;
+}
+</style>
+</head>
+<body>
+
+<form action="/create" method="post">
+  <div class="container">
+    <h1>Create New Restaurant</h1>
+    <p>Please input the information to create a new rustaurant.</p>
+    <hr>
+
+    <label><b>Owner</b></label>
+    <input type="text" placeholder="Enter Owner" name="owner" id="owner" required>	
+ 
+    <label><b>Name</b></label>
+    <input type="text" placeholder="Enter Name" name="name" id="name" required>
+
+    <label><b>Borough</b></label>
+    <input type="text" placeholder="Enter Borough" name="borough" id="borough" >
+
+    <label><b>Cuisine</b></label>
+    <input type="text" placeholder="Enter Cuisine" name="cuisine" id="cuisine" >
+
+    <label><b>Street</b></label>
+    <input type="text" placeholder="Enter Street" name="street" id="street" >
+	
+    <label><b>Zip Code</b></label>
+    <input type="text" placeholder="Enter Zip Code" name="zipcode" id="zipcode" >
+
+    <label><b>Building</b></label>
+    <input type="text" placeholder="Enter Building" name="building" id="building" >
+	
+    <label><b>GPS Coordinates (lon.)</b></label>
+    <input type="number" placeholder="Enter GPS Coordinates (lon.)" name="GPSlon" id="GPSlon" >
+
+    <label><b>GPS Coordinates (lat.)</b></label>
+    <input type="number" placeholder="Enter GPS Coordinates (lat.)" name="GPSlat" id="GPSlat" ><br>
+
+    <label><b>Photo</b></label><br>
+    <input type="file" name="photo" id="photo" >
+
+    <hr>
+
+    <button type="submit" class="registerbtn">Create</button>
+  </div>
+  
+  <div class="container hyperlink">
+    <p><a href="/homepage">Home Page</a></p>
+  </div>
+</form>
+
+</body>
+</html>
+
